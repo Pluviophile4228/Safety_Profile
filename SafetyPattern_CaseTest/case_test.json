@@ -1,0 +1,408 @@
+{
+  "description": "JSON for FCC analysis, including 4 sensor groups and 2 FCCs",
+  "analysisTopEventName": "Total Loss of Flight & Propulsion Computation",
+
+  "analysisTopEventLogic": "OR(FAIL:LU_ElectricMotor, FAIL:LP_EMA, FAIL:LD_ElectricMotor, FAIL:LN_EMA, FAIL:RU_ElectricMotor, FAIL:RP_EMA, FAIL:RD_ElectricMotor, FAIL:RN_EMA)",
+  //"analysisTopEventLogic": "AND(FAIL:fcc1_rta, FAIL:fcc2_rta)",
+  "components": [
+
+    {"id": "ADS_Primary_InputProcessing", "name": "Air Data Sensors::Primary Channel::Input Processing", "failureRate": 1.0e-6, "Time": 1},
+    {"id": "ADS_Primary_DataProcessing", "name": "Air Data Sensors::Primary Channel::Data Processing", "failureRate": 2.0e-6, "Time": 1},
+    {"id": "ADS_Primary_OutputProcessing", "name": "Air Data Sensors::Primary Channel::Output Processing", "failureRate": 0.5e-6, "Time": 1},
+    {"id": "ADS_Secondary_InputProcessing", "name": "Air Data Sensors::Secondary Channel::Input Processing", "failureRate": 1.0e-6, "Time": 1},
+    {"id": "ADS_Secondary_DataProcessing", "name": "Air Data Sensors::Secondary Channel::Data Processing", "failureRate": 2.0e-6, "Time": 1},
+    {"id": "ADS_Secondary_OutputProcessing", "name": "Air Data Sensors::Secondary Channel::Output Processing", "failureRate": 0.5e-6, "Time": 1},
+    {"id": "ADS_FaultDetector", "name": "Air Data Sensors::Fault Detector", "failureRate": 0.1e-6, "Time": 1},
+    {"id": "ADS_Switch", "name": "Air Data Sensors::Switch", "failureRate": 0.2e-6, "Time": 1},
+
+
+    {"id": "AHRS_Primary_InputProcessing", "name": "AHRS::Primary Channel::Input Processing", "failureRate": 1.0e-6, "Time": 1},
+    {"id": "AHRS_Primary_DataProcessing", "name": "AHRS::Primary Channel::Data Processing", "failureRate": 2.0e-6, "Time": 1},
+    {"id": "AHRS_Primary_OutputProcessing", "name": "AHRS::Primary Channel::Output Processing", "failureRate": 0.5e-6, "Time": 1},
+    {"id": "AHRS_Secondary_InputProcessing", "name": "AHRS::Secondary Channel::Input Processing", "failureRate": 1.0e-6, "Time": 1},
+    {"id": "AHRS_Secondary_DataProcessing", "name": "AHRS::Secondary Channel::Data Processing", "failureRate": 2.0e-6, "Time": 1},
+    {"id": "AHRS_Secondary_OutputProcessing", "name": "AHRS::Secondary Channel::Output Processing", "failureRate": 0.5e-6, "Time": 1},
+    {"id": "AHRS_FaultDetector", "name": "AHRS::Fault Detector", "failureRate": 0.1e-6, "Time": 1},
+    {"id": "AHRS_Switch", "name": "AHRS::Switch", "failureRate": 0.2e-6, "Time": 1},
+
+
+    {"id": "AOA_Primary_InputProcessing", "name": "AOA::Primary Channel::Input Processing", "failureRate": 1.0e-6, "Time": 1},
+    {"id": "AOA_Primary_DataProcessing", "name": "AOA::Primary Channel::Data Processing", "failureRate": 2.0e-6, "Time": 1},
+    {"id": "AOA_Primary_OutputProcessing", "name": "AOA::Primary Channel::Output Processing", "failureRate": 0.5e-6, "Time": 1},
+    {"id": "AOA_Secondary_InputProcessing", "name": "AOA::Secondary Channel::Input Processing", "failureRate": 1.0e-6, "Time": 1},
+    {"id": "AOA_Secondary_DataProcessing", "name": "AOA::Secondary Channel::Data Processing", "failureRate": 2.0e-6, "Time": 1},
+    {"id": "AOA_Secondary_OutputProcessing", "name": "AOA::Secondary Channel::Output Processing", "failureRate": 0.5e-6, "Time": 1},
+    {"id": "AOA_FaultDetector", "name": "AOA::Fault Detector", "failureRate": 0.1e-6, "Time": 1},
+    {"id": "AOA_Switch", "name": "AOA::Switch", "failureRate": 0.2e-6, "Time": 1},
+
+
+    {"id": "RA_Primary_InputProcessing", "name": "Radio Altimeter::Primary Channel::Input Processing", "failureRate": 1.0e-6, "Time": 1},
+    {"id": "RA_Primary_DataProcessing", "name": "Radio Altimeter::Primary Channel::Data Processing", "failureRate": 2.0e-6, "Time": 1},
+    {"id": "RA_Primary_OutputProcessing", "name": "Radio Altimeter::Primary Channel::Output Processing", "failureRate": 0.5e-6, "Time": 1},
+    {"id": "RA_Secondary_InputProcessing", "name": "Radio Altimeter::Secondary Channel::Input Processing", "failureRate": 1.0e-6, "Time": 1},
+    {"id": "RA_Secondary_DataProcessing", "name": "Radio Altimeter::Secondary Channel::Data Processing", "failureRate": 2.0e-6, "Time": 1},
+    {"id": "RA_Secondary_OutputProcessing", "name": "Radio Altimeter::Secondary Channel::Output Processing", "failureRate": 0.5e-6, "Time": 1},
+    {"id": "RA_FaultDetector", "name": "Radio Altimeter::Fault Detector", "failureRate": 0.1e-6, "Time": 1},
+    {"id": "RA_Switch", "name": "Radio Altimeter::Switch", "failureRate": 0.2e-6, "Time": 1},
+
+
+    {"id": "FCC1_InputAllocator", "name": "FCC1::Input Allocator", "failureRate": 1.0e-7, "Time": 3},
+    {"id": "FCC1_FeatureExtractor", "name": "FCC1::Feature Extractor", "failureRate": 2.0e-6, "Time": 3},
+    {"id": "FCC1_AIEngine", "name": "FCC1::AI Inference Engine", "failureRate": 5.0e-6, "Time": 3},
+    {"id": "FCC1_OptimizedOutput", "name": "FCC1::Performance-Optimized Output", "failureRate": 1.0e-7, "Time": 3},
+    {"id": "FCC1_Reversionary_Input", "name": "FCC1::Reversionary Channel::Input Processing", "failureRate": 1.0e-8, "Time": 3},
+    {"id": "FCC1_SimplexController", "name": "FCC1::Verified Simplex Controller", "failureRate": 1.0e-8, "Time": 3},
+    {"id": "FCC1_Reversionary_Output", "name": "FCC1::Reversionary Channel::Output Processing", "failureRate": 1.0e-8, "Time": 3},
+    {"id": "FCC1_RTAMonitorSwitch", "name": "FCC1::RTA Monitor & Switch mechanism", "failureRate": 1.0e-8, "Time": 3},
+
+    {"id": "FCC2_InputAllocator", "name": "FCC2::Input Allocator", "failureRate": 1.0e-7, "Time": 3},
+    {"id": "FCC2_FeatureExtractor", "name": "FCC2::Feature Extractor", "failureRate": 2.0e-6, "Time": 3},
+    {"id": "FCC2_AIEngine", "name": "FCC2::AI Inference Engine", "failureRate": 5.0e-6, "Time": 3},
+    {"id": "FCC2_OptimizedOutput", "name": "FCC2::Performance-Optimized Output", "failureRate": 1.0e-7, "Time": 3},
+    {"id": "FCC2_Reversionary_Input", "name": "FCC2::Reversionary Channel::Input Processing", "failureRate": 1.0e-8, "Time": 3},
+    {"id": "FCC2_SimplexController", "name": "FCC2::Verified Simplex Controller", "failureRate": 1.0e-8, "Time": 3},
+    {"id": "FCC2_Reversionary_Output", "name": "FCC2::Reversionary Channel::Output Processing", "failureRate": 1.0e-8, "Time": 3},
+    {"id": "FCC2_RTAMonitorSwitch", "name": "FCC2::RTA Monitor & Switch mechanism", "failureRate": 1.0e-8, "Time": 3},
+
+
+    {"id": "L_RoCon1_Input", "name": "LT WT Motor Control::WT Rotor::RoController1::Input Processing", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "L_RoCon1_DataProc", "name": "LT WT Motor Control::WT Rotor::RoController1::Data Processing", "failureRate": 2.5e-7, "Time": 1},
+    {"id": "L_RoCon1_OutputProc", "name": "LT WT Motor Control::WT Rotor::RoController1::Output Processing", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "L_RoCon1_DataCheck", "name": "LT WT Motor Control::WT Rotor::RoController1::Data Integrity Check", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "L_RoCon1_ActMon", "name": "LT WT Motor Control::WT Rotor::RoController1::Actuation Monitoring", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "LU_ElectricMotor", "name": "LT WT Motor Control::WT Rotor::Electric Motor", "failureRate": 5.0e-6, "Time": 1},
+
+    {"id": "L_PitchCon_Input","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Input Processing","failureRate": 1.0e-7, "Time": 1},
+    {"id": "L_PitchCon_DataProc","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Processing", "failureRate": 2.5e-7, "Time": 1},
+    {"id": "L_PitchCon_OutputProc","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Output Processing", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "L_PitchCon_DataCheck", "name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Integrity Check", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "L_PitchCon_ActMon","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Actuation Monitoring", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "LP_EMA", "name": "LT WT Motor Control::WT Rotor::EMA", "failureRate": 4.5e-6, "Time": 1},
+
+    {"id": "L_RoCon2_Input", "name": "LT WT Motor Control::WT Rotor::RoController1::Input Processing", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "L_RoCon2_DataProc", "name": "LT WT Motor Control::WT Rotor::RoController1::Data Processing","failureRate": 2.5e-7, "Time": 1},
+    {"id": "L_RoCon2_OutputProc", "name": "LT WT Motor Control::WT Rotor::RoController1::Output Processing", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "L_RoCon2_DataCheck","name": "LT WT Motor Control::WT Rotor::RoController1::Data Integrity Check", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "L_RoCon2_ActMon", "name": "LT WT Motor Control::WT Rotor::RoController1::Actuation Monitoring", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "LD_ElectricMotor", "name": "LT WT Motor Control::WT Rotor::Electric Motor", "failureRate": 5.0e-6, "Time": 1},
+
+    {"id": "L_NaTiltCon_Input","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Input Processing","failureRate": 1.0e-7, "Time": 1},
+    {"id": "L_NaTiltCon_DataProc","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Processing", "failureRate": 2.5e-7, "Time": 1},
+    {"id": "L_NaTiltCon_OutputProc","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Output Processing", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "L_NaTiltCon_DataCheck", "name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Integrity Check", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "L_NaTiltCon_ActMon","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Actuation Monitoring", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "LN_EMA", "name": "LT WT Motor Control::WT Rotor::EMA", "failureRate": 4.5e-6, "Time": 1},
+
+    {"id": "R_RoCon1_Input", "name": "LT WT Motor Control::WT Rotor::RoController1::Input Processing", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "R_RoCon1_DataProc", "name": "LT WT Motor Control::WT Rotor::RoController1::Data Processing","failureRate": 2.5e-7, "Time": 1},
+    {"id": "R_RoCon1_OutputProc", "name": "LT WT Motor Control::WT Rotor::RoController1::Output Processing", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "R_RoCon1_DataCheck","name": "LT WT Motor Control::WT Rotor::RoController1::Data Integrity Check", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "R_RoCon1_ActMon", "name": "LT WT Motor Control::WT Rotor::RoController1::Actuation Monitoring", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "RU_ElectricMotor", "name": "LT WT Motor Control::WT Rotor::Electric Motor", "failureRate": 5.0e-6, "Time": 1},
+
+    {"id": "R_PitchCon_Input","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Input Processing","failureRate": 1.0e-7, "Time": 1},
+    {"id": "R_PitchCon_DataProc","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Processing", "failureRate": 2.5e-7, "Time": 1},
+    {"id": "R_PitchCon_OutputProc","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Output Processing", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "R_PitchCon_DataCheck", "name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Integrity Check", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "R_PitchCon_ActMon","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Actuation Monitoring", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "RP_EMA", "name": "LT WT Motor Control::WT Rotor::EMA", "failureRate": 4.5e-6, "Time": 1},
+
+    {"id": "R_RoCon2_Input", "name": "LT WT Motor Control::WT Rotor::RoController1::Input Processing", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "R_RoCon2_DataProc", "name": "LT WT Motor Control::WT Rotor::RoController1::Data Processing","failureRate": 2.5e-7, "Time": 1},
+    {"id": "R_RoCon2_OutputProc", "name": "LT WT Motor Control::WT Rotor::RoController1::Output Processing", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "R_RoCon2_DataCheck","name": "LT WT Motor Control::WT Rotor::RoController1::Data Integrity Check", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "R_RoCon2_ActMon", "name": "LT WT Motor Control::WT Rotor::RoController1::Actuation Monitoring", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "RD_ElectricMotor", "name": "LT WT Motor Control::WT Rotor::Electric Motor", "failureRate": 5.0e-6, "Time": 1},
+
+    {"id": "R_NaTiltCon_Input","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Input Processing","failureRate": 1.0e-7, "Time": 1},
+    {"id": "R_NaTiltCon_DataProc","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Processing", "failureRate": 2.5e-7, "Time": 1},
+    {"id": "R_NaTiltCon_OutputProc","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Output Processing", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "R_NaTiltCon_DataCheck", "name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Integrity Check", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "R_NaTiltCon_ActMon","name": "LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Actuation Monitoring", "failureRate": 0.5e-7, "Time": 1},
+    {"id": "RN_EMA", "name": "LT WT Motor Control::WT Rotor::EMA", "failureRate": 4.5e-6, "Time": 1},
+
+    {"id": "FB_L_RoCon1_Status", "name": "Feedback Path Failure from L-RoCon1", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "FB_L_PitchCon_Status", "name": "Feedback Path Failure from L-PitchCon", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "FB_L_RoCon2_Status", "name": "Feedback Path Failure from L-RoCon2", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "FB_L_NaTiltCon_Status", "name": "Feedback Path Failure from L-NaTiltCon", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "FB_R_RoCon1_Status", "name": "Feedback Path Failure from R-RoCon1", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "FB_R_PitchCon_Status", "name": "Feedback Path Failure from R-PitchCon", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "FB_R_RoCon2_Status", "name": "Feedback Path Failure from R-RoCon2", "failureRate": 1.0e-7, "Time": 1},
+    {"id": "FB_R_NaTiltCon_Status", "name": "Feedback Path Failure from R-NaTiltCon", "failureRate": 1.0e-7, "Time": 1}
+
+  ],
+  "patterns": [
+    {
+      "id": "air_data_redundancy", "type": "StandbyRedundancy", "name": "Air Data Sensors",
+      "contained_components": {
+        "primary_input": "ADS_Primary_InputProcessing",
+        "primary_process": "ADS_Primary_DataProcessing",
+        "primary_output": "ADS_Primary_OutputProcessing",
+        "secondary_input": "ADS_Secondary_InputProcessing",
+        "secondary_process": "ADS_Secondary_DataProcessing",
+        "secondary_output": "ADS_Secondary_OutputProcessing",
+        "detector": "ADS_FaultDetector",
+        "switch": "ADS_Switch"
+      },
+      "ftaTemplate": "OR( AND( OR(BE:{primary_input}, BE:{primary_process}, BE:{primary_output}), OR(BE:{detector}, BE:{switch}) ), AND( OR(BE:{primary_input}, BE:{primary_process}, BE:{primary_output}), OR(BE:{secondary_input}, BE:{secondary_process}, BE:{secondary_output}) ) )",
+      "specifications": {"topEventDescription": "Loss of Validated Air Data", "standbyType": "HotStandby", "detectionMechanism": "ref:ADS_FaultDetector", "switchoverTime": "10ms", "isDissimilar": false}
+    },
+
+    {
+      "id": "ahrs_data_redundancy", "type": "StandbyRedundancy", "name": "AHRS",
+      "contained_components": {
+        "primary_input": "AHRS_Primary_InputProcessing",
+        "primary_process": "AHRS_Primary_DataProcessing",
+        "primary_output": "AHRS_Primary_OutputProcessing",
+        "secondary_input": "AHRS_Secondary_InputProcessing",
+        "secondary_process": "AHRS_Secondary_DataProcessing",
+        "secondary_output": "AHRS_Secondary_OutputProcessing",
+        "detector": "AHRS_FaultDetector",
+        "switch": "AHRS_Switch"
+      },
+      "ftaTemplate": "OR( AND( OR(BE:{primary_input}, BE:{primary_process}, BE:{primary_output}), OR(BE:{detector}, BE:{switch}) ), AND( OR(BE:{primary_input}, BE:{primary_process}, BE:{primary_output}), OR(BE:{secondary_input}, BE:{secondary_process}, BE:{secondary_output}) ) )",
+      "specifications": {"topEventDescription": "Loss of Validated AHRS Data", "standbyType": "HotStandby", "detectionMechanism": "ref:AHRS_FaultDetector", "switchoverTime": "10ms", "isDissimilar": false}
+    },
+
+    {
+      "id": "aoa_data_redundancy", "type": "StandbyRedundancy", "name": "AOA",
+      "contained_components": {
+        "primary_input": "AOA_Primary_InputProcessing",
+        "primary_process": "AOA_Primary_DataProcessing",
+        "primary_output": "AOA_Primary_OutputProcessing",
+        "secondary_input": "AOA_Secondary_InputProcessing",
+        "secondary_process": "AOA_Secondary_DataProcessing",
+        "secondary_output": "AOA_Secondary_OutputProcessing",
+        "detector": "AOA_FaultDetector",
+        "switch": "AOA_Switch"
+      },
+      "ftaTemplate": "OR( AND( OR(BE:{primary_input}, BE:{primary_process}, BE:{primary_output}), OR(BE:{detector}, BE:{switch}) ), AND( OR(BE:{primary_input}, BE:{primary_process}, BE:{primary_output}), OR(BE:{secondary_input}, BE:{secondary_process}, BE:{secondary_output}) ) )",
+      "specifications": {"topEventDescription": "Loss of Validated AOA Data", "standbyType": "HotStandby", "detectionMechanism": "ref:AOA_FaultDetector", "switchoverTime": "10ms", "isDissimilar": false}
+    },
+
+    {
+      "id": "ra_data_redundancy", "type": "StandbyRedundancy", "name": "Radio Altimeter",
+      "contained_components": {
+        "primary_input": "RA_Primary_InputProcessing",
+        "primary_process": "RA_Primary_DataProcessing",
+        "primary_output": "RA_Primary_OutputProcessing",
+        "secondary_input": "RA_Secondary_InputProcessing",
+        "secondary_process": "RA_Secondary_DataProcessing",
+        "secondary_output": "RA_Secondary_OutputProcessing",
+        "detector": "RA_FaultDetector",
+        "switch": "RA_Switch"
+      },
+      "ftaTemplate": "OR( AND( OR(BE:{primary_input}, BE:{primary_process}, BE:{primary_output}), OR(BE:{detector}, BE:{switch}) ), AND( OR(BE:{primary_input}, BE:{primary_process}, BE:{primary_output}), OR(BE:{secondary_input}, BE:{secondary_process}, BE:{secondary_output}) ) )",
+      "specifications": {"topEventDescription": "Loss of Validated RA Data", "standbyType": "HotStandby", "detectionMechanism": "ref:RA_FaultDetector", "switchoverTime": "10ms", "isDissimilar": false}
+    },
+
+    {
+      "id": "fcc1_rta", "type": "RuntimeAssurance", "name": "FCC1: Flight & Propulsion Control Electronics",
+      "contained_components": {
+        "advancedController": "FCC1_AIEngine",
+        "safetyMonitor": "FCC1_RTAMonitorSwitch",
+        "defaultSafeAction": "FCC1_SimplexController",
+        "input_alloc": "FCC1_InputAllocator",
+        "adv_feature_extractor": "FCC1_FeatureExtractor",
+        "adv_output": "FCC1_OptimizedOutput",
+        "rev_input": "FCC1_Reversionary_Input",
+        "rev_output": "FCC1_Reversionary_Output",
+
+        "fb_l_rocon1": "FB_L_RoCon1_Status",
+        "fb_l_pitch": "FB_L_PitchCon_Status",
+        "fb_l_rocon2": "FB_L_RoCon2_Status",
+        "fb_l_natilt": "FB_L_NaTiltCon_Status",
+        "fb_r_rocon1": "FB_R_RoCon1_Status",
+        "fb_r_pitch": "FB_R_PitchCon_Status",
+        "fb_r_rocon2": "FB_R_RoCon2_Status",
+        "fb_r_natilt": "FB_R_NaTiltCon_Status"
+      },
+      "ftaTemplate": "OR( AND( OR(BE:{input_alloc}, BE:{fb_l_rocon1}, BE:{fb_l_pitch}, BE:{fb_l_rocon2}, BE:{fb_l_natilt}, BE:{fb_r_rocon1}, BE:{fb_r_pitch}, BE:{fb_r_rocon2}, BE:{fb_r_natilt}, BE:{adv_feature_extractor}, BE:{advancedController}, BE:{adv_output}), BE:{safetyMonitor} ), AND( BE:{safetyMonitor}, OR(BE:{rev_input}, BE:{defaultSafeAction}, BE:{rev_output}) ) )",
+      "specifications": {
+        "topEventDescription": "FCC1 Fails to provide valid control command"
+      }
+    },
+
+    {
+      "id": "fcc2_rta", "type": "RuntimeAssurance", "name": "FCC2: Flight & Propulsion Control Electronics",
+      "contained_components": {
+        "advancedController": "FCC2_AIEngine",
+        "safetyMonitor": "FCC2_RTAMonitorSwitch",
+        "defaultSafeAction": "FCC2_SimplexController",
+        "input_alloc": "FCC2_InputAllocator",
+        "adv_feature_extractor": "FCC2_FeatureExtractor",
+        "adv_output": "FCC2_OptimizedOutput",
+        "rev_input": "FCC2_Reversionary_Input",
+        "rev_output": "FCC2_Reversionary_Output",
+
+        "fb_l_rocon1": "FB_L_RoCon1_Status",
+        "fb_l_pitch": "FB_L_PitchCon_Status",
+        "fb_l_rocon2": "FB_L_RoCon2_Status",
+        "fb_l_natilt": "FB_L_NaTiltCon_Status",
+        "fb_r_rocon1": "FB_R_RoCon1_Status",
+        "fb_r_pitch": "FB_R_PitchCon_Status",
+        "fb_r_rocon2": "FB_R_RoCon2_Status",
+        "fb_r_natilt": "FB_R_NaTiltCon_Status"
+      },
+      "ftaTemplate": "OR( AND( OR(BE:{input_alloc}, BE:{fb_l_rocon1}, BE:{fb_l_pitch}, BE:{fb_l_rocon2}, BE:{fb_l_natilt}, BE:{fb_r_rocon1}, BE:{fb_r_pitch}, BE:{fb_r_rocon2}, BE:{fb_r_natilt}, BE:{adv_feature_extractor}, BE:{advancedController}, BE:{adv_output}), BE:{safetyMonitor} ), AND( BE:{safetyMonitor}, OR(BE:{rev_input}, BE:{defaultSafeAction}, BE:{rev_output}) ) )",
+      "specifications": {
+        "topEventDescription": "FCC2 Fails to provide valid control command"
+      }
+    },
+
+    {
+      "id": "L_RoController1_Pattern", "type": "ProtectedSingleChannel", "name": "LT WT Motor Control: WT Rotor::RoController1",
+      "contained_components": {
+        "input": "L_RoCon1_Input",
+        "process": "L_RoCon1_DataProc",
+        "output": "L_RoCon1_OutputProc",
+        "data_check": "L_RoCon1_DataCheck",
+        "act_monitor": "L_RoCon1_ActMon"
+      },
+      "ftaTemplate": "OR(BE:{input}, BE:{process}, BE:{output}, BE:{data_check}, BE:{act_monitor})",
+      "specifications": {
+        "topEventDescription": "Loss of RoController1 Function"
+      }
+    },
+    {
+      "id": "L_PitchController_Pattern", "type": "ProtectedSingleChannel", "name": "LT WT Motor Control: WT Rotor::Propeller Pitch Controller",
+      "contained_components": {
+        "input": "L_PitchCon_Input",
+        "process": "L_PitchCon_DataProc",
+        "output": "L_PitchCon_OutputProc",
+        "data_check": "L_PitchCon_DataCheck",
+        "act_monitor": "L_PitchCon_ActMon"
+      },
+      "ftaTemplate": "OR(BE:{input}, BE:{process}, BE:{output}, BE:{data_check}, BE:{act_monitor})",
+      "specifications": {
+        "topEventDescription": "Loss of Left WingTip Propeller Pitch Controller Function"
+      }
+    },
+
+    {
+      "id": "L_RoController2_Pattern", "type": "ProtectedSingleChannel", "name": "LT WT Motor Control: WT Rotor::RoController1",
+      "contained_components": {
+        "input": "L_RoCon2_Input",
+        "process": "L_RoCon2_DataProc",
+        "output": "L_RoCon2_OutputProc",
+        "data_check": "L_RoCon2_DataCheck",
+        "act_monitor": "L_RoCon2_ActMon"
+      },
+      "ftaTemplate": "OR(BE:{input}, BE:{process}, BE:{output}, BE:{data_check}, BE:{act_monitor})",
+      "specifications": {
+        "topEventDescription": "Loss of Left WingTip  RoController2 Function"
+      }
+    },
+    {
+      "id": "L_NacelleTiltController_Pattern", "type": "ProtectedSingleChannel", "name": "LT WT Motor Control: WT Rotor::Nacelle Tilt Controller",
+      "contained_components": {
+        "input": "L_NaTiltCon_Input",
+        "process": "L_NaTiltCon_DataProc",
+        "output": "L_NaTiltCon_OutputProc",
+        "data_check": "L_NaTiltCon_DataCheck",
+        "act_monitor": "L_NaTiltCon_ActMon"
+      },
+      "ftaTemplate": "OR(BE:{input}, BE:{process}, BE:{output}, BE:{data_check}, BE:{act_monitor})",
+      "specifications": {
+        "topEventDescription": "Loss of Left WingTip Nacelle Tilt Controller Function"
+      }
+    },
+
+    {
+      "id": "R_RoController1_Pattern", "type": "ProtectedSingleChannel", "name": "RT WT Motor Control: WT Rotor::RoController1",
+      "contained_components": {
+        "input": "R_RoCon1_Input",
+        "process": "R_RoCon1_DataProc",
+        "output": "R_RoCon1_OutputProc",
+        "data_check": "R_RoCon1_DataCheck",
+        "act_monitor": "R_RoCon1_ActMon"
+      },
+      "ftaTemplate": "OR(BE:{input}, BE:{process}, BE:{output}, BE:{data_check}, BE:{act_monitor})",
+      "specifications": {
+        "topEventDescription": "Loss of Right WingTip RoController1 Function"
+      }
+    },
+    {
+      "id": "R_PitchController_Pattern", "type": "ProtectedSingleChannel", "name": "RT WT Motor Control: WT Rotor::Propeller Pitch Controller",
+      "contained_components": {
+        "input": "R_PitchCon_Input",
+        "process": "R_PitchCon_DataProc",
+        "output": "R_PitchCon_OutputProc",
+        "data_check": "R_PitchCon_DataCheck",
+        "act_monitor": "R_PitchCon_ActMon"
+      },
+      "ftaTemplate": "OR(BE:{input}, BE:{process}, BE:{output}, BE:{data_check}, BE:{act_monitor})",
+      "specifications": {
+        "topEventDescription": "Loss of Right WingTip Propeller Pitch Controller Function"
+      }
+    },
+
+    {
+      "id": "R_RoController2_Pattern", "type": "ProtectedSingleChannel", "name": "RT WT Motor Control: WT Rotor::RoController1",
+      "contained_components": {
+        "input": "R_RoCon2_Input",
+        "process": "R_RoCon2_DataProc",
+        "output": "R_RoCon2_OutputProc",
+        "data_check": "R_RoCon2_DataCheck",
+        "act_monitor": "R_RoCon2_ActMon"
+      },
+      "ftaTemplate": "OR(BE:{input}, BE:{process}, BE:{output}, BE:{data_check}, BE:{act_monitor})",
+      "specifications": {
+        "topEventDescription": "Loss of Right WingTip RoController2 Function"
+      }
+    },
+    {
+      "id": "R_NacelleTiltController_Pattern", "type": "ProtectedSingleChannel", "name": "RT WT Motor Control: WT Rotor::Nacelle Tilt Controller",
+      "contained_components": {
+        "input": "R_NaTiltCon_Input",
+        "process": "R_NaTiltCon_DataProc",
+        "output": "R_NaTiltCon_OutputProc",
+        "data_check": "R_NaTiltCon_DataCheck",
+        "act_monitor": "R_NaTiltCon_ActMon"
+      },
+      "ftaTemplate": "OR(BE:{input}, BE:{process}, BE:{output}, BE:{data_check}, BE:{act_monitor})",
+      "specifications": {
+        "topEventDescription": "Loss of Right WingTip Nacelle Tilt Controller Function"
+      }
+    }
+  ],
+  "connections": [
+    {"source": "ADS_Switch", "target": "FCC1_InputAllocator", "name": "Validated Air Data Link"},
+    {"source": "ADS_Switch", "target": "FCC2_InputAllocator", "name": "Validated Air Data Link"},
+    {"source": "AHRS_Switch", "target": "FCC1_InputAllocator", "name": "Validated Air Data Link"},
+    {"source": "AHRS_Switch", "target": "FCC2_InputAllocator", "name": "Validated Air Data Link"},
+    {"source": "AOA_Switch", "target": "FCC1_InputAllocator", "name": "Validated Air Data Link"},
+    {"source": "AOA_Switch", "target": "FCC2_InputAllocator", "name": "Validated Air Data Link"},
+    {"source": "RA_Switch", "target": "FCC1_InputAllocator", "name": "Validated Air Data Link"},
+    {"source": "RA_Switch", "target": "FCC2_InputAllocator", "name": "Validated Air Data Link"},
+
+    {"source": "FCC1_RTAMonitorSwitch", "target": "L_RoCon1_Input"},
+    {"source": "FCC1_RTAMonitorSwitch", "target": "L_PitchCon_Input"},
+    {"source": "FCC1_RTAMonitorSwitch", "target": "L_RoCon2_Input"},
+    {"source": "FCC1_RTAMonitorSwitch", "target": "L_NaTiltCon_Input"},
+    {"source": "FCC2_RTAMonitorSwitch", "target": "L_RoCon1_Input"},
+    {"source": "FCC2_RTAMonitorSwitch", "target": "L_PitchCon_Input"},
+    {"source": "FCC2_RTAMonitorSwitch", "target": "L_RoCon2_Input"},
+    {"source": "FCC2_RTAMonitorSwitch", "target": "L_NaTiltCon_Input"},
+    {"source": "L_RoCon1_OutputProc", "target": "LU_ElectricMotor", "name": "Control Signal"},
+    {"source": "L_PitchCon_OutputProc", "target": "LP_EMA", "name": "Control Signal"},
+    {"source": "L_RoCon2_OutputProc", "target": "LD_ElectricMotor", "name": "Control Signal"},
+    {"source": "L_NaTiltCon_OutputProc", "target": "LN_EMA", "name": "Control Signal"},
+
+
+
+    {"source": "FCC1_RTAMonitorSwitch", "target": "R_RoCon1_Input"},
+    {"source": "FCC1_RTAMonitorSwitch", "target": "R_PitchCon_Input"},
+    {"source": "FCC1_RTAMonitorSwitch", "target": "R_RoCon2_Input"},
+    {"source": "FCC1_RTAMonitorSwitch", "target": "R_NaTiltCon_Input"},
+
+    {"source": "FCC2_RTAMonitorSwitch", "target": "L_RoCon1_Input"},
+    {"source": "FCC2_RTAMonitorSwitch", "target": "R_PitchCon_Input"},
+    {"source": "FCC2_RTAMonitorSwitch", "target": "R_RoCon2_Input"},
+    {"source": "FCC2_RTAMonitorSwitch", "target": "R_NaTiltCon_Input"},
+    {"source": "R_RoCon1_OutputProc", "target": "RU_ElectricMotor", "name": "Control Signal"},
+    {"source": "R_PitchCon_OutputProc", "target": "RP_EMA", "name": "Control Signal"},
+    {"source": "R_RoCon2_OutputProc", "target": "RD_ElectricMotor", "name": "Control Signal"},
+    {"source": "R_NaTiltCon_OutputProc", "target": "RN_EMA", "name": "Control Signal"}
+  ]
+}

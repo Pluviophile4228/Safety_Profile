@@ -1,0 +1,145 @@
+Minimal Cutsets Analysis Results
+Total Minimal Cutsets: 138
+========================================
+
+--- Minimal Cutsets of Order 1 ---
+ - { LT WT Motor Control::WT Rotor::RoController1::Output Processing (ID: R_RoCon2_OutputProc) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Processing (ID: L_NaTiltCon_DataProc) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Input Processing (ID: L_NaTiltCon_Input) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Integrity Check (ID: R_NaTiltCon_DataCheck) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Actuation Monitoring (ID: L_RoCon1_ActMon) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Output Processing (ID: R_NaTiltCon_OutputProc) }
+ - { LT WT Motor Control::WT Rotor::Electric Motor (ID: RD_ElectricMotor) }
+ - { LT WT Motor Control::WT Rotor::EMA (ID: LN_EMA) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Output Processing (ID: L_RoCon2_OutputProc) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Processing (ID: R_NaTiltCon_DataProc) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Data Integrity Check (ID: R_RoCon1_DataCheck) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Data Integrity Check (ID: R_RoCon2_DataCheck) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Data Processing (ID: L_RoCon1_DataProc) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Data Processing (ID: L_RoCon2_DataProc) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Input Processing (ID: R_RoCon1_Input) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Integrity Check (ID: R_PitchCon_DataCheck) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Processing (ID: R_PitchCon_DataProc) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Output Processing (ID: L_NaTiltCon_OutputProc) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Actuation Monitoring (ID: L_NaTiltCon_ActMon) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Actuation Monitoring (ID: R_PitchCon_ActMon) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Input Processing (ID: R_NaTiltCon_Input) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Output Processing (ID: L_RoCon1_OutputProc) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Output Processing (ID: R_PitchCon_OutputProc) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Data Integrity Check (ID: L_RoCon2_DataCheck) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Output Processing (ID: L_PitchCon_OutputProc) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Input Processing (ID: L_PitchCon_Input) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Actuation Monitoring (ID: L_RoCon2_ActMon) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Data Processing (ID: R_RoCon2_DataProc) }
+ - { LT WT Motor Control::WT Rotor::EMA (ID: RN_EMA) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Processing (ID: L_PitchCon_DataProc) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Data Integrity Check (ID: L_RoCon1_DataCheck) }
+ - { LT WT Motor Control::WT Rotor::EMA (ID: LP_EMA) }
+ - { LT WT Motor Control::WT Rotor::Electric Motor (ID: LU_ElectricMotor) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Actuation Monitoring (ID: R_RoCon2_ActMon) }
+ - { LT WT Motor Control::WT Rotor::Electric Motor (ID: LD_ElectricMotor) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Actuation Monitoring (ID: L_PitchCon_ActMon) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Actuation Monitoring (ID: R_NaTiltCon_ActMon) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Actuation Monitoring (ID: R_RoCon1_ActMon) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Input Processing (ID: L_RoCon2_Input) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Integrity Check (ID: L_PitchCon_DataCheck) }
+ - { LT WT Motor Control::WT Rotor::Electric Motor (ID: RU_ElectricMotor) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Input Processing (ID: R_PitchCon_Input) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Output Processing (ID: R_RoCon1_OutputProc) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Input Processing (ID: R_RoCon2_Input) }
+ - { LT WT Motor Control::WT Rotor::EMA (ID: RP_EMA) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Data Processing (ID: R_RoCon1_DataProc) }
+ - { LT WT Motor Control::WT Rotor::RoController1::Input Processing (ID: L_RoCon1_Input) }
+ - { LT WT Motor Control::WT Rotor::Propeller Pitch Controller::Data Integrity Check (ID: L_NaTiltCon_DataCheck) }
+
+--- Minimal Cutsets of Order 2 ---
+ - { AOA::Primary Channel::Input Processing (ID: AOA_Primary_InputProcessing), AOA::Secondary Channel::Output Processing (ID: AOA_Secondary_OutputProcessing) }
+ - { FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch), FCC2::Verified Simplex Controller (ID: FCC2_SimplexController) }
+ - { AOA::Fault Detector (ID: AOA_FaultDetector), AOA::Primary Channel::Output Processing (ID: AOA_Primary_OutputProcessing) }
+ - { FCC1::Input Allocator (ID: FCC1_InputAllocator), FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch) }
+ - { Radio Altimeter::Primary Channel::Input Processing (ID: RA_Primary_InputProcessing), Radio Altimeter::Secondary Channel::Output Processing (ID: RA_Secondary_OutputProcessing) }
+ - { AOA::Primary Channel::Input Processing (ID: AOA_Primary_InputProcessing), AOA::Secondary Channel::Data Processing (ID: AOA_Secondary_DataProcessing) }
+ - { AOA::Primary Channel::Output Processing (ID: AOA_Primary_OutputProcessing), AOA::Secondary Channel::Data Processing (ID: AOA_Secondary_DataProcessing) }
+ - { AOA::Primary Channel::Output Processing (ID: AOA_Primary_OutputProcessing), AOA::Secondary Channel::Input Processing (ID: AOA_Secondary_InputProcessing) }
+ - { AOA::Primary Channel::Data Processing (ID: AOA_Primary_DataProcessing), AOA::Switch (ID: AOA_Switch) }
+ - { Radio Altimeter::Primary Channel::Input Processing (ID: RA_Primary_InputProcessing), Radio Altimeter::Secondary Channel::Data Processing (ID: RA_Secondary_DataProcessing) }
+ - { Radio Altimeter::Primary Channel::Output Processing (ID: RA_Primary_OutputProcessing), Radio Altimeter::Secondary Channel::Input Processing (ID: RA_Secondary_InputProcessing) }
+ - { FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch), FCC1::Verified Simplex Controller (ID: FCC1_SimplexController) }
+ - { FCC2::Feature Extractor (ID: FCC2_FeatureExtractor), FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch) }
+ - { Radio Altimeter::Primary Channel::Data Processing (ID: RA_Primary_DataProcessing), Radio Altimeter::Secondary Channel::Output Processing (ID: RA_Secondary_OutputProcessing) }
+ - { Radio Altimeter::Fault Detector (ID: RA_FaultDetector), Radio Altimeter::Primary Channel::Output Processing (ID: RA_Primary_OutputProcessing) }
+ - { AHRS::Primary Channel::Output Processing (ID: AHRS_Primary_OutputProcessing), AHRS::Secondary Channel::Input Processing (ID: AHRS_Secondary_InputProcessing) }
+ - { Radio Altimeter::Primary Channel::Output Processing (ID: RA_Primary_OutputProcessing), Radio Altimeter::Secondary Channel::Data Processing (ID: RA_Secondary_DataProcessing) }
+ - { AHRS::Primary Channel::Output Processing (ID: AHRS_Primary_OutputProcessing), AHRS::Switch (ID: AHRS_Switch) }
+ - { AHRS::Primary Channel::Input Processing (ID: AHRS_Primary_InputProcessing), AHRS::Secondary Channel::Input Processing (ID: AHRS_Secondary_InputProcessing) }
+ - { Radio Altimeter::Primary Channel::Data Processing (ID: RA_Primary_DataProcessing), Radio Altimeter::Secondary Channel::Data Processing (ID: RA_Secondary_DataProcessing) }
+ - { AHRS::Primary Channel::Input Processing (ID: AHRS_Primary_InputProcessing), AHRS::Secondary Channel::Output Processing (ID: AHRS_Secondary_OutputProcessing) }
+ - { AOA::Primary Channel::Input Processing (ID: AOA_Primary_InputProcessing), AOA::Switch (ID: AOA_Switch) }
+ - { Feedback Path Failure from L-NaTiltCon (ID: FB_L_NaTiltCon_Status), FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch) }
+ - { Air Data Sensors::Primary Channel::Data Processing (ID: ADS_Primary_DataProcessing), Air Data Sensors::Secondary Channel::Output Processing (ID: ADS_Secondary_OutputProcessing) }
+ - { AOA::Primary Channel::Data Processing (ID: AOA_Primary_DataProcessing), AOA::Secondary Channel::Data Processing (ID: AOA_Secondary_DataProcessing) }
+ - { AHRS::Primary Channel::Input Processing (ID: AHRS_Primary_InputProcessing), AHRS::Secondary Channel::Data Processing (ID: AHRS_Secondary_DataProcessing) }
+ - { Feedback Path Failure from L-PitchCon (ID: FB_L_PitchCon_Status), FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch) }
+ - { AHRS::Fault Detector (ID: AHRS_FaultDetector), AHRS::Primary Channel::Input Processing (ID: AHRS_Primary_InputProcessing) }
+ - { Feedback Path Failure from R-RoCon2 (ID: FB_R_RoCon2_Status), FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch) }
+ - { FCC1::Performance-Optimized Output (ID: FCC1_OptimizedOutput), FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch) }
+ - { Air Data Sensors::Primary Channel::Input Processing (ID: ADS_Primary_InputProcessing), Air Data Sensors::Secondary Channel::Input Processing (ID: ADS_Secondary_InputProcessing) }
+ - { Air Data Sensors::Fault Detector (ID: ADS_FaultDetector), Air Data Sensors::Primary Channel::Output Processing (ID: ADS_Primary_OutputProcessing) }
+ - { Radio Altimeter::Primary Channel::Output Processing (ID: RA_Primary_OutputProcessing), Radio Altimeter::Switch (ID: RA_Switch) }
+ - { Air Data Sensors::Primary Channel::Output Processing (ID: ADS_Primary_OutputProcessing), Air Data Sensors::Secondary Channel::Data Processing (ID: ADS_Secondary_DataProcessing) }
+ - { Air Data Sensors::Primary Channel::Output Processing (ID: ADS_Primary_OutputProcessing), Air Data Sensors::Secondary Channel::Input Processing (ID: ADS_Secondary_InputProcessing) }
+ - { Radio Altimeter::Fault Detector (ID: RA_FaultDetector), Radio Altimeter::Primary Channel::Input Processing (ID: RA_Primary_InputProcessing) }
+ - { AHRS::Primary Channel::Data Processing (ID: AHRS_Primary_DataProcessing), AHRS::Secondary Channel::Input Processing (ID: AHRS_Secondary_InputProcessing) }
+ - { Radio Altimeter::Primary Channel::Input Processing (ID: RA_Primary_InputProcessing), Radio Altimeter::Secondary Channel::Input Processing (ID: RA_Secondary_InputProcessing) }
+ - { Air Data Sensors::Primary Channel::Input Processing (ID: ADS_Primary_InputProcessing), Air Data Sensors::Secondary Channel::Data Processing (ID: ADS_Secondary_DataProcessing) }
+ - { AHRS::Primary Channel::Data Processing (ID: AHRS_Primary_DataProcessing), AHRS::Secondary Channel::Output Processing (ID: AHRS_Secondary_OutputProcessing) }
+ - { Feedback Path Failure from L-RoCon1 (ID: FB_L_RoCon1_Status), FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch) }
+ - { Air Data Sensors::Primary Channel::Input Processing (ID: ADS_Primary_InputProcessing), Air Data Sensors::Secondary Channel::Output Processing (ID: ADS_Secondary_OutputProcessing) }
+ - { AOA::Primary Channel::Output Processing (ID: AOA_Primary_OutputProcessing), AOA::Secondary Channel::Output Processing (ID: AOA_Secondary_OutputProcessing) }
+ - { AHRS::Primary Channel::Input Processing (ID: AHRS_Primary_InputProcessing), AHRS::Switch (ID: AHRS_Switch) }
+ - { FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch), FCC1::Reversionary Channel::Input Processing (ID: FCC1_Reversionary_Input) }
+ - { AOA::Fault Detector (ID: AOA_FaultDetector), AOA::Primary Channel::Input Processing (ID: AOA_Primary_InputProcessing) }
+ - { FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch), FCC2::Reversionary Channel::Input Processing (ID: FCC2_Reversionary_Input) }
+ - { Radio Altimeter::Fault Detector (ID: RA_FaultDetector), Radio Altimeter::Primary Channel::Data Processing (ID: RA_Primary_DataProcessing) }
+ - { AOA::Fault Detector (ID: AOA_FaultDetector), AOA::Primary Channel::Data Processing (ID: AOA_Primary_DataProcessing) }
+ - { Feedback Path Failure from R-NaTiltCon (ID: FB_R_NaTiltCon_Status), FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch) }
+ - { Radio Altimeter::Primary Channel::Output Processing (ID: RA_Primary_OutputProcessing), Radio Altimeter::Secondary Channel::Output Processing (ID: RA_Secondary_OutputProcessing) }
+ - { AOA::Primary Channel::Data Processing (ID: AOA_Primary_DataProcessing), AOA::Secondary Channel::Output Processing (ID: AOA_Secondary_OutputProcessing) }
+ - { Feedback Path Failure from L-RoCon2 (ID: FB_L_RoCon2_Status), FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch) }
+ - { AHRS::Fault Detector (ID: AHRS_FaultDetector), AHRS::Primary Channel::Output Processing (ID: AHRS_Primary_OutputProcessing) }
+ - { AHRS::Primary Channel::Data Processing (ID: AHRS_Primary_DataProcessing), AHRS::Secondary Channel::Data Processing (ID: AHRS_Secondary_DataProcessing) }
+ - { Feedback Path Failure from L-RoCon1 (ID: FB_L_RoCon1_Status), FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch) }
+ - { FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch), FCC2::Reversionary Channel::Output Processing (ID: FCC2_Reversionary_Output) }
+ - { Feedback Path Failure from R-PitchCon (ID: FB_R_PitchCon_Status), FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch) }
+ - { Feedback Path Failure from R-NaTiltCon (ID: FB_R_NaTiltCon_Status), FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch) }
+ - { AOA::Primary Channel::Data Processing (ID: AOA_Primary_DataProcessing), AOA::Secondary Channel::Input Processing (ID: AOA_Secondary_InputProcessing) }
+ - { FCC2::Performance-Optimized Output (ID: FCC2_OptimizedOutput), FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch) }
+ - { FCC1::AI Inference Engine (ID: FCC1_AIEngine), FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch) }
+ - { Feedback Path Failure from R-RoCon2 (ID: FB_R_RoCon2_Status), FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch) }
+ - { Feedback Path Failure from L-NaTiltCon (ID: FB_L_NaTiltCon_Status), FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch) }
+ - { FCC2::AI Inference Engine (ID: FCC2_AIEngine), FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch) }
+ - { Radio Altimeter::Primary Channel::Data Processing (ID: RA_Primary_DataProcessing), Radio Altimeter::Secondary Channel::Input Processing (ID: RA_Secondary_InputProcessing) }
+ - { Feedback Path Failure from R-PitchCon (ID: FB_R_PitchCon_Status), FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch) }
+ - { Air Data Sensors::Primary Channel::Data Processing (ID: ADS_Primary_DataProcessing), Air Data Sensors::Secondary Channel::Input Processing (ID: ADS_Secondary_InputProcessing) }
+ - { AHRS::Primary Channel::Output Processing (ID: AHRS_Primary_OutputProcessing), AHRS::Secondary Channel::Data Processing (ID: AHRS_Secondary_DataProcessing) }
+ - { FCC1::Feature Extractor (ID: FCC1_FeatureExtractor), FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch) }
+ - { Air Data Sensors::Fault Detector (ID: ADS_FaultDetector), Air Data Sensors::Primary Channel::Input Processing (ID: ADS_Primary_InputProcessing) }
+ - { AHRS::Primary Channel::Output Processing (ID: AHRS_Primary_OutputProcessing), AHRS::Secondary Channel::Output Processing (ID: AHRS_Secondary_OutputProcessing) }
+ - { Feedback Path Failure from R-RoCon1 (ID: FB_R_RoCon1_Status), FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch) }
+ - { Air Data Sensors::Primary Channel::Output Processing (ID: ADS_Primary_OutputProcessing), Air Data Sensors::Switch (ID: ADS_Switch) }
+ - { AOA::Primary Channel::Output Processing (ID: AOA_Primary_OutputProcessing), AOA::Switch (ID: AOA_Switch) }
+ - { Feedback Path Failure from L-RoCon2 (ID: FB_L_RoCon2_Status), FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch) }
+ - { Feedback Path Failure from L-PitchCon (ID: FB_L_PitchCon_Status), FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch) }
+ - { Radio Altimeter::Primary Channel::Data Processing (ID: RA_Primary_DataProcessing), Radio Altimeter::Switch (ID: RA_Switch) }
+ - { Air Data Sensors::Primary Channel::Output Processing (ID: ADS_Primary_OutputProcessing), Air Data Sensors::Secondary Channel::Output Processing (ID: ADS_Secondary_OutputProcessing) }
+ - { AOA::Primary Channel::Input Processing (ID: AOA_Primary_InputProcessing), AOA::Secondary Channel::Input Processing (ID: AOA_Secondary_InputProcessing) }
+ - { FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch), FCC1::Reversionary Channel::Output Processing (ID: FCC1_Reversionary_Output) }
+ - { AHRS::Fault Detector (ID: AHRS_FaultDetector), AHRS::Primary Channel::Data Processing (ID: AHRS_Primary_DataProcessing) }
+ - { Air Data Sensors::Primary Channel::Data Processing (ID: ADS_Primary_DataProcessing), Air Data Sensors::Switch (ID: ADS_Switch) }
+ - { Air Data Sensors::Primary Channel::Input Processing (ID: ADS_Primary_InputProcessing), Air Data Sensors::Switch (ID: ADS_Switch) }
+ - { Feedback Path Failure from R-RoCon1 (ID: FB_R_RoCon1_Status), FCC1::RTA Monitor & Switch mechanism (ID: FCC1_RTAMonitorSwitch) }
+ - { Air Data Sensors::Fault Detector (ID: ADS_FaultDetector), Air Data Sensors::Primary Channel::Data Processing (ID: ADS_Primary_DataProcessing) }
+ - { Radio Altimeter::Primary Channel::Input Processing (ID: RA_Primary_InputProcessing), Radio Altimeter::Switch (ID: RA_Switch) }
+ - { Air Data Sensors::Primary Channel::Data Processing (ID: ADS_Primary_DataProcessing), Air Data Sensors::Secondary Channel::Data Processing (ID: ADS_Secondary_DataProcessing) }
+ - { AHRS::Primary Channel::Data Processing (ID: AHRS_Primary_DataProcessing), AHRS::Switch (ID: AHRS_Switch) }
+ - { FCC2::Input Allocator (ID: FCC2_InputAllocator), FCC2::RTA Monitor & Switch mechanism (ID: FCC2_RTAMonitorSwitch) }
